@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:profinal/Data/DataBase.dart';
 import 'package:profinal/Data/Super_Class.dart';
 import 'package:profinal/Data/one.dart';
 import 'package:profinal/views/tabs/tap1.dart';
@@ -24,7 +25,14 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   bool isPressed = false;
   final controller = Get.put(AuthRepo());
+  final db = Get.put(DBRepo());
 
+  @override
+  void initState() {
+  db.mySections;
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     LangController controllerlang =Get.find();

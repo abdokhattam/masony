@@ -67,7 +67,16 @@ List myUsers =[];
 
 
 
-
+Future getSections()async{
+    try{
+     List data = await supabase.from('sections').select('*,doctors(*))');
+     mySections =data;
+     print(data);
+    }
+        catch(e){
+      throw Exception(e);
+        }
+}
 
   Future insertSection()async{
     try{
